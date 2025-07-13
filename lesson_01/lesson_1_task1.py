@@ -1,2 +1,3 @@
-my_name ="Максим"
-print (my_name) 
+my_name = "Максим"
+
+print(my_name)
