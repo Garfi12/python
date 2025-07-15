@@ -1,6 +1,9 @@
 def is_year_leap(year):
-    return year % 4 == 0
 
-year = 2020
-result = is_year_leap(year)
-print(f"год {year}: {result}")
+    if year % 4 == 0:
+       print("Год", year, ":", "True")
+
+    else: 
+        print("Год " , year , ":" ,False)
+        
+is_year_leap(2021)
