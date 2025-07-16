@@ -1,8 +1,7 @@
 from address import Address
 from mailing import Mailing
 
-to_address = Address
-from_address = Address
+from_address = Mailing
 to_address = 236040, "г. Москва", "ул. Невская", 25, 15
 from_address = 236404, "г. Калиниград", "ул. Черняховского", 43, 12
 
