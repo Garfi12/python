@@ -1,14 +1,13 @@
 class User:
-
     def __init__(self, first_name, last_name):
-        self.userFN = first_name
-        self.userLN = last_name
+        self.first_name = first_name
+        self.last_name = last_name
 
-    def prFirst_name(self):
-        print(self.userFN)
+    def print_first_name(self):
+        print(self.first_name)
 
-    def prLast_name(self):
-        print(self.userLN)
+    def print_last_name(self):
+        print(self.last_name)
 
-    def prAll_name(self):
-        print(self.userFN, self.userLN)
+    def print_full_name(self):
+        print(f"{self.first_name} {self.last_name}")
