@@ -1,21 +1,22 @@
 from address import Address
 from mailing import Mailing
 
-from_address = Mailing
-to_address = 236040, "г. Москва", "ул. Невская", 25, 15
-from_address = 236404, "г. Калиниград", "ул. Черняховского", 43, 12
+# Создаем адреса отправителя и получателя
+to_address = Address("123456", "Москва", "Ленина", "10", "25")
+from_address = Address("654321", "Санкт-Петербург", "Пушкина", "5", "30")
 
-sending = Mailing
-sending(to_address, from_address, 1200, 1234567890)
+# Создаем почтовое отправление
+mailing = Mailing(
+    to_address=to_address,
+    from_address=from_address,
+    cost=500,
+    track="ABC123456789"
+)
 
+# Выводим информацию в заданном формате
 print(
-    "Отправление",
-    sending.track,
-    "из",
-    from_address,
-    "в",
-    to_address,
-    ". Стоимость",
-    sending.cost,
-    "рублей.",
+    f"Отправление {mailing.track} из "
+    f"{mailing.from_address.index}, {mailing.from_address.city}, {mailing.from_address.street}, {mailing.from_address.house} - {mailing.from_address.apartment} в "
+    f"{mailing.to_address.index}, {mailing.to_address.city}, {mailing.to_address.street}, {mailing.to_address.house} - {mailing.to_address.apartment}. "
+    f"Стоимость {mailing.cost} рублей."
 )
