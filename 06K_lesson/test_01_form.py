@@ -24,10 +24,10 @@ def test_form_validation():
         driver.find_element(By.CSS_SELECTOR, 'input[name="job-position"]').send_keys("QA")
         driver.find_element(By.CSS_SELECTOR, 'input[name="company"]').send_keys("SkyPro")
         
-        # Нажатие кнопки Submit
+    
         driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
         
-        # Даем время для применения стилей (можно заменить на явное ожидание)
+     
         time.sleep(1)
         
       
