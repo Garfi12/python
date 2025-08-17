@@ -47,21 +47,17 @@ def driver():
 
 def test_calculator_with_delay(driver):
     """Тест проверяет работу калькулятора с задержкой."""
-    # 1. Инициализация Page Object
+
     calculator = CalculatorPage(driver)
 
-    # 2. Открытие страницы
     calculator.open()
 
-    # 3. Установка задержки
     calculator.set_delay(45)
 
-    # 4. Выполнение операции 7 + 8
     calculator.click_button("7")
     calculator.click_button("+")
     calculator.click_button("8")
     calculator.click_button("=")
 
-    # 5. Проверка результата
     result = calculator.get_result()
     assert result == "15", f"Ожидался результат 15, получено {result}"

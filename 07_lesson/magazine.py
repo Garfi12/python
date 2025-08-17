@@ -70,31 +70,25 @@ def driver():
     driver.quit()
 
 def test_saucedemo_checkout(driver):
-    # Инициализация страниц
+
     login_page = LoginPage(driver)
     inventory_page = InventoryPage(driver)
     cart_page = CartPage(driver)
     checkout_page = CheckoutPage(driver)
 
-    # 1. Открыть сайт и авторизоваться
     login_page.open()
     login_page.login("standard_user", "secret_sauce")
 
-    # 2. Добавить товары в корзину
     inventory_page.add_item_to_cart("Sauce Labs Backpack")
     inventory_page.add_item_to_cart("Sauce Labs Bolt T-Shirt")
     inventory_page.add_item_to_cart("Sauce Labs Onesie")
 
-    # 3. Перейти в корзину
     inventory_page.go_to_cart()
 
-    # 4. Проверить количество товаров и перейти к оформлению
     assert cart_page.get_cart_items_count() == 3
     cart_page.proceed_to_checkout()
-
-    # 5. Заполнить данные для доставки
+ 
     checkout_page.fill_shipping_info("John", "Doe", "12345")
 
-    # 6. Проверить итоговую сумму
     total_amount = checkout_page.get_total_amount()
     assert total_amount == "58.29", f"Expected total $58.29, got ${total_amount}"
