@@ -16,4 +16,4 @@ class TestLogin:
         self.login_page.enter_password("secret_sauce")
         self.login_page.click_login()
         
-      assert "inventory.html" in self.driver.current_url
+     assert "inventory.html" in self.driver.current_url
