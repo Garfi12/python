@@ -14,15 +14,8 @@ class CalculatorPage:
         
     def click_button(self, button_text):
         button_locator = (By.XPATH, f"//span[text()='{button_text}']")
-        self.driver.find_element(*button_locator).click()
-        
+        self.driver.find_element(*button_locator).click()        
 
-        
-    def get_result(self, timeout):
-        return WebDriverWait(self.driver, timeout).until(
-            EC.text_to_be_present_in_element(self.result_field, "")
-        ).text
-    
     def get_result(self, timeout):
         # Ждем, пока элемент появится
         element = WebDriverWait(self.driver, timeout).until(
