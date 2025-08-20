@@ -24,7 +24,7 @@ def create_project(headers):
     data = {
         "title": "Тестовый проект",  # Название проекта
         "users": {
-            "990a703e-d36b-4583-9a8e-313ebe3b4e67": "admin"
+            "": ""
             # Пример ID сотрудников
         }
     }
@@ -43,7 +43,7 @@ def test_create_project_positive(headers):
     data = {
         "title": "Новый тестовый проект",
         "users": {
-            "990a703e-d36b-4583-9a8e-313ebe3b4e67": "admin",
+            "": "",
             # Пример ID сотрудников
         }
     }
@@ -79,7 +79,7 @@ def test_update_project_positive(create_project, headers):
         "deleted": True,
         "title": "Обновленное название проекта",
         "users": {
-            "990a703e-d36b-4583-9a8e-313ebe3b4e67": "admin",
+            "": "",
         }
     }
 
