@@ -24,7 +24,7 @@ def create_project(headers):
     data = {
         "title": "Тестовый проект",  # Название проекта
         "users": {
-            "ad042a81-2230-45d8-aeb7-80ece42bd22b": "admin"
+            "990a703e-d36b-4583-9a8e-313ebe3b4e67": "admin"
             # Пример ID сотрудников
         }
     }
