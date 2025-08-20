@@ -16,7 +16,27 @@ class CalculatorPage:
         button_locator = (By.XPATH, f"//span[text()='{button_text}']")
         self.driver.find_element(*button_locator).click()
         
+
+        
     def get_result(self, timeout):
         return WebDriverWait(self.driver, timeout).until(
             EC.text_to_be_present_in_element(self.result_field, "")
         ).text
+    
+    def get_result(self, timeout):
+        # Ждем, пока элемент появится
+        element = WebDriverWait(self.driver, timeout).until(
+            EC.presence_of_element_located(self.result_field)
+        )
+        
+        # Ждем, пока результат изменится (появится число вместо выражения)
+        start_time = time.time()
+        while time.time() - start_time < timeout:
+            current_text = element.text
+            # Если текст содержит только цифры (результат вычисления)
+            if current_text.isdigit():
+                return current_text
+            time.sleep(0.5)
+        
+        # Если таймаут истек, возвращаем текущий текст
+        return element.text

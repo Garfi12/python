@@ -36,3 +36,5 @@ def test_complete_purchase_flow(driver):
     # 5. Проверка итоговой суммы
     total = checkout_page.get_total_amount()
     assert total == "Total: $58.29", f"Expected total to be $58.29, got {total}"
+    
+    checkout_page.finish_checkout()
