@@ -23,10 +23,7 @@ def headers():
 def create_project(headers):
     data = {
         "title": "Тестовый проект",  # Название проекта
-        "users": {
-            "": ""
-            # Пример ID сотрудников
-        }
+       "users": {}
     }
     response = requests.post(
         BASE_URL + 'projects',
@@ -42,10 +39,7 @@ def create_project(headers):
 def test_create_project_positive(headers):
     data = {
         "title": "Новый тестовый проект",
-        "users": {
-            "": "",
-            # Пример ID сотрудников
-        }
+        "users": {}
     }
     response = requests.post(
         BASE_URL + 'projects',
@@ -78,9 +72,7 @@ def test_update_project_positive(create_project, headers):
     update_data = {
         "deleted": True,
         "title": "Обновленное название проекта",
-        "users": {
-            "": "",
-        }
+       "users": {}
     }
 
     response = requests.put(
