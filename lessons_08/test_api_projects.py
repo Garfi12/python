@@ -2,10 +2,7 @@ import requests
 import pytest
 
 BASE_URL = 'https://ru.yougile.com/api-v2/'
-import os 
-API_KEY =
-os.getenv("YOUGILE_API_KEY")
-
+API_KEY = "My_Key"  # Здесь укажите ваш реальный токен API
 
 
 
@@ -133,11 +130,14 @@ def test_get_project_negative(headers):
 
 def print_response(response):
     print(f"Status Code: {response.status_code}")
+    print(f"Response Headers: {dict(response.headers)}")
     if response.content:
-        print(f"Response JSON: {response.json()}")
+        try:
+            print(f"Response JSON: {response.json()}")
+        except ValueError:
+            print(f"Response Text: {response.text}")
     else:
         print("No content in response")
-
 
 # Запуск тестов
 if __name__ == "__main__":
