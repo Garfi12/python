@@ -1,7 +1,7 @@
 import pytest
 import allure
 from selenium import webdriver
-from Lesson_07.calculator_page import CalculatorPage
+from lesson_10.pages.calculator_page import CalculatorPage
 from time import sleep
 
 

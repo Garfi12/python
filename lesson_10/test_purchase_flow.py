@@ -1,9 +1,12 @@
 import pytest
 import allure
 from selenium import webdriver
-from pages.login_page import LoginPage
-from pages.main_page import MainPage
-from pages.cart_page import CartPage
+from lesson_10.pages.login_page import LoginPage
+from lesson_10.pages.main_page import MainPage
+from lesson_10.pages.cart_page import CartPage
+from lesson_10.pages.checkout_page import CheckoutPage
+
+
 from pages.checkout_page import CheckoutPage
 
 
