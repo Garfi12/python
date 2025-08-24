@@ -1,10 +1,10 @@
 import pytest
 import allure
 from selenium import webdriver
-from Lesson_07.login_page import LoginPage
-from Lesson_07.main_page import MainPage
-from Lesson_07.cart_page import CartPage
-from Lesson_07.checkout_page import CheckoutPage
+from pages.login_page import LoginPage
+from pages.main_page import MainPage
+from pages.cart_page import CartPage
+from pages.checkout_page import CheckoutPage
 
 
 @pytest.fixture()
